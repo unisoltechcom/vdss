@@ -1,0 +1,118 @@
+##
+##	Add-in and Automation functions			Funções Suplemento e Automação
+##
+GETPIVOTDATA		= INFODADOSTABELADINÂMICA	##	Retorna os dados armazenados em um relatório de tabela dinâmica
+
+
+##
+##	Cube functions					Funções de Cubo
+##
+CUBEKPIMEMBER		= MEMBROKPICUBO			##	Retorna o nome de um KPI (indicador de desempenho-chave), uma propriedade e uma medida e exibe o nome e a propriedade na célula. Um KPI é uma medida quantificável, como o lucro bruto mensal ou a rotatividade trimestral dos funcionários, usada para monitorar o desempenho de uma organização.
+CUBEMEMBER		= MEMBROCUBO			##	Retorna um membro ou tupla em uma hierarquia de cubo. Use para validar se o membro ou tupla existe no cubo.
+CUBEMEMBERPROPERTY	= PROPRIEDADEMEMBROCUBO		##	Retorna o valor da propriedade de um membro no cubo. Usada para validar a existência do nome do membro no cubo e para retornar a propriedade especificada para esse membro.
+CUBERANKEDMEMBER	= MEMBROCLASSIFICADOCUBO	##	Retorna o enésimo membro, ou o membro ordenado, em um conjunto. Use para retornar um ou mais elementos em um conjunto, assim como o melhor vendedor ou os dez melhores alunos.
+CUBESET			= CONJUNTOCUBO			##	Define um conjunto calculado de membros ou tuplas enviando uma expressão do conjunto para o cubo no servidor, que cria o conjunto e o retorna para o Microsoft Office Excel.
+CUBESETCOUNT		= CONTAGEMCONJUNTOCUBO		##	Retorna o número de itens em um conjunto.
+CUBEVALUE		= VALORCUBO			##	Retorna um valor agregado de um cubo.
+
+
+##
+##	Database functions				Funções de banco de dados
+##
+DAVERAGE		= BDMÉDIA			##	Retorna a média das entradas selecionadas de um banco de dados
+DCOUNT			= BDCONTAR			##	Conta as células que contêm números em um banco de dados
+DCOUNTA			= BDCONTARA			##	Conta células não vazias em um banco de dados
+DGET			= BDEXTRAIR			##	Extrai de um banco de dados um único registro que corresponde a um critério específico
+DMAX			= BDMÁX				##	Retorna o valor máximo de entradas selecionadas de um banco de dados
+DMIN			= BDMÍN				##	Retorna o valor mínimo de entradas selecionadas de um banco de dados
+DPRODUCT		= BDMULTIPL			##	Multiplica os valores em um campo específico de registros que correspondem ao critério em um banco de dados
+DSTDEV			= BDEST				##	Estima o desvio padrão com base em uma amostra de entradas selecionadas de um banco de dados
+DSTDEVP			= BDDESVPA			##	Calcula o desvio padrão com base na população inteira de entradas selecionadas de um banco de dados
+DSUM			= BDSOMA			##	Adiciona os números à coluna de campos de registros do banco de dados que correspondem ao critério
+DVAR			= BDVAREST			##	Estima a variância com base em uma amostra de entradas selecionadas de um banco de dados
+DVARP			= BDVARP			##	Calcula a variância com base na população inteira de entradas selecionadas de um banco de dados
+
+
+##
+##	Date and time functions				Funções de data e hora
+##
+DATE			= DATA				##	Retorna o número de série de uma data específica
+DATEVALUE		= DATA.VALOR			##	Converte uma data na forma de texto para um número de série
+DAY			= DIA				##	Converte um número de série em um dia do mês
+DAYS360			= DIAS360			##	Calcula o número de dias entre duas datas com base em um ano de 360 dias
+EDATE			= DATAM				##	Retorna o número de série da data que é o número indicado de meses antes ou depois da data inicial
+EOMONTH			= FIMMÊS			##	Retorna o número de série do último dia do mês antes ou depois de um número especificado de meses
+HOUR			= HORA				##	Converte um número de série em uma hora
+MINUTE			= MINUTO			##	Converte um número de série em um minuto
+MONTH			= MÊS				##	Converte um número de série em um mês
+NETWORKDAYS		= DIATRABALHOTOTAL		##	Retorna o número de dias úteis inteiros entre duas datas
+NOW			= AGORA				##	Retorna o número de série seqüencial da data e hora atuais
+SECOND			= SEGUNDO			##	Converte um número de série em um segundo
+TIME			= HORA				##	Retorna o número de série de uma hora específica
+TIMEVALUE		= VALOR.TEMPO			##	Converte um horário na forma de texto para um número de série
+TODAY			= HOJE				##	Retorna o número de série da data de hoje
+WEEKDAY			= DIA.DA.SEMANA			##	Converte um número de série em um dia da semana
+WEEKNUM			= NÚMSEMANA			##	Converte um número de série em um número que representa onde a semana cai numericamente em um ano
+WORKDAY			= DIATRABALHO			##	Retorna o número de série da data antes ou depois de um número específico de dias úteis
+YEAR			= ANO				##	Converte um número de série em um ano
+YEARFRAC		= FRAÇÃOANO			##	Retorna a fração do ano que representa o número de dias entre data_inicial e data_final
+
+
+##
+##	Engineering functions				Funções de engenharia
+##
+BESSELI			= BESSELI			##	Retorna a função de Bessel In(x) modificada
+BESSELJ			= BESSELJ			##	Retorna a função de Bessel Jn(x)
+BESSELK			= BESSELK			##	Retorna a função de Bessel Kn(x) modificada
+BESSELY			= BESSELY			##	Retorna a função de Bessel Yn(x)
+BIN2DEC			= BIN2DEC			##	Converte um número binário em decimal
+BIN2HEX			= BIN2HEX			##	Converte um número binário em hexadecimal
+BIN2OCT			= BIN2OCT			##	Converte um número binário em octal
+COMPLEX			= COMPLEX			##	Converte coeficientes reais e imaginários e um número complexo
+CONVERT			= CONVERTER			##	Converte um número de um sistema de medida para outro
+DEC2BIN			= DECABIN			##	Converte um número decimal em binário
+DEC2HEX			= DECAHEX			##	Converte um número decimal em hexadecimal
+DEC2OCT			= DECAOCT			##	Converte um número decimal em octal
+DELTA			= DELTA				##	Testa se dois valores são iguais
+ERF			= FUNERRO			##	Retorna a função de erro
+ERFC			= FUNERROCOMPL			##	Retorna a função de erro complementar
+GESTEP			= DEGRAU			##	Testa se um número é maior do que um valor limite
+HEX2BIN			= HEXABIN			##	Converte um número hexadecimal em binário
+HEX2DEC			= HEXADEC			##	Converte um número hexadecimal em decimal
+HEX2OCT			= HEXAOCT			##	Converte um número hexadecimal em octal
+IMABS			= IMABS				##	Retorna o valor absoluto (módulo) de um número complexo
+IMAGINARY		= IMAGINÁRIO			##	Retorna o coeficiente imaginário de um número complexo
+IMARGUMENT		= IMARG				##	Retorna o argumento teta, um ângulo expresso em radianos
+IMCONJUGATE		= IMCONJ			##	Retorna o conjugado complexo de um número complexo
+IMCOS			= IMCOS				##	Retorna o cosseno de um número complexo
+IMDIV			= IMDIV				##	Retorna o quociente de dois números complexos
+IMEXP			= IMEXP				##	Retorna o exponencial de um número complexo
+IMLN			= IMLN				##	Retorna o logaritmo natural de um número complexo
+IMLOG10			= IMLOG10			##	Retorna o logaritmo de base 10 de um número complexo
+IMLOG2			= IMLOG2			##	Retorna o logaritmo de base 2 de um número complexo
+IMPOWER			= IMPOT				##	Retorna um número complexo elevado a uma potência inteira
+IMPRODUCT		= IMPROD			##	Retorna o produto de números complexos
+IMREAL			= IMREAL			##	Retorna o coeficiente real de um número complexo
+IMSIN			= IMSENO			##	Retorna o seno de um número complexo
+IMSQRT			= IMRAIZ			##	Retorna a raiz quadrada de um número complexo
+IMSUB			= IMSUBTR			##	Retorna a diferença entre dois números complexos
+IMSUM			= IMSOMA			##	Retorna a soma de números complexos
+OCT2BIN			= OCTABIN			##	Converte um número octal em binário
+OCT2DEC			= OCTADEC			##	Converte um número octal em decimal
+OCT2HEX			= OCTAHEX			##	Converte um número octal em hexadecimal
+
+
+##
+##	Financial functions				Funções financeiras
+##
+ACCRINT			= JUROSACUM			##	Retorna a taxa de juros acumulados de um título que paga uma taxa periódica de juros
+ACCRINTM		= JUROSACUMV			##	Retorna os juros acumulados de um título que paga juros no vencimento
+AMORDEGRC		= AMORDEGRC			##	Retorna a depreciação para cada período contábil usando o coeficiente de depreciação
+AMORLINC		= AMORLINC			##	Retorna a depreciação para cada período contábil
+COUPDAYBS		= CUPDIASINLIQ			##	Retorna o número de dias do início do período de cupom até a data de liquidação
+COUPDAYS		= CUPDIAS			##	Retorna o número de dias no período de cupom que contém a data de quitação
+COUPDAYSNC		= CUPDIASPRÓX			##	Retorna o número de dias da data de liquidação até a data do próximo cupom
+COUPNCD			= CUPDATAPRÓX			##	Retorna a próxima data de cupom após a data de quitação
+COUPNUM			= CUPNÚM			##	Retorna o número de cupons pagáveis entre as datas de quitação e vencimento
+COUPPCD			= CUPDATAANT			##	Retorna a data de cupom anterior à data de quitação
+CUMIPMT			= PGTOJURACUM			##	Retorna os juros acumulados pagos entre dois per

@@ -1,0 +1,176 @@
+##
+## PHPExcel
+##
+## Copyright (c) 2006 - 2013 PHPExcel
+##
+## This library is free software; you can redistribute it and/or
+## modify it under the terms of the GNU Lesser General Public
+## License as published by the Free Software Foundation; either
+## version 2.1 of the License, or (at your option) any later version.
+##
+## This library is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+## Lesser General Public License for more details.
+##
+## You should have received a copy of the GNU Lesser General Public
+## License along with this library; if not, write to the Free Software
+## Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+##
+## @category   PHPExcel
+## @package    PHPExcel_Calculation
+## @copyright  Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+## @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+## @version    ##VERSION##, ##DATE##
+##
+## Data in this file derived from http://www.piuha.fi/excel-function-name-translation/
+##
+##
+
+
+##
+##	Add-in and Automation functions			Eklenti ve Otomasyon fonksiyonları
+##
+GETPIVOTDATA		= ÖZETVERİAL	##	Bir Özet Tablo raporunda saklanan verileri verir.
+
+
+##
+##	Cube functions					Küp işlevleri
+##
+CUBEKPIMEMBER		= KÜPKPIÜYE			##	Kilit performans göstergesi (KPI-Key Performance Indicator) adını, özelliğini ve ölçüsünü verir ve hücredeki ad ve özelliği gösterir. KPI, bir kurumun performansını izlemek için kullanılan aylık brüt kâr ya da üç aylık çalışan giriş çıkışları gibi ölçülebilen bir birimdir.
+CUBEMEMBER			= KÜPÜYE			##	Bir küp hiyerarşisinde bir üyeyi veya kaydı verir. Üye veya kaydın küpte varolduğunu doğrulamak için kullanılır.
+CUBEMEMBERPROPERTY	= KÜPÜYEÖZELLİĞİ	##	Bir küpte bir üyenin özelliğinin değerini verir. Küp içinde üye adının varlığını doğrulamak ve bu üyenin belli özelliklerini getirmek için kullanılır.
+CUBERANKEDMEMBER	= KÜPÜYESIRASI 		##	Bir küme içindeki üyenin derecesini veya kaçıncı olduğunu verir. En iyi satış elemanı, veya en iyi on öğrenci gibi bir kümedeki bir veya daha fazla öğeyi getirmek için kullanılır.
+CUBESET				= KÜPKÜME			##	Kümeyi oluşturan ve ardından bu kümeyi Microsoft Office Excel'e getiren sunucudaki küpe küme ifadelerini göndererek hesaplanan üye veya kayıt kümesini tanımlar.
+CUBESETCOUNT		= KÜPKÜMESAY		##	Bir kümedeki öğelerin sayısını getirir.
+CUBEVALUE			= KÜPDEĞER 			##	Bir küpten toplam değeri getirir.
+
+
+##
+##	Database functions				Veritabanı işlevleri
+##
+DAVERAGE		= VSEÇORT			##	Seçili veritabanı girdilerinin ortalamasını verir.
+DCOUNT			= VSEÇSAY			##	Veritabanında sayı içeren hücre sayısını hesaplar.
+DCOUNTA			= VSEÇSAYDOLU		##	Veritabanındaki boş olmayan hücreleri sayar.
+DGET			= VAL				##	Veritabanından, belirtilen ölçütlerle eşleşen tek bir rapor çıkarır.
+DMAX			= VSEÇMAK			##	Seçili veritabanı girişlerinin en yüksek değerini verir.
+DMIN			= VSEÇMİN			##	Seçili veritabanı girişlerinin en düşük değerini verir.
+DPRODUCT		= VSEÇÇARP			##	Kayıtların belli bir alanında bulunan, bir veritabanındaki ölçütlerle eşleşen değerleri çarpar.
+DSTDEV			= VSEÇSTDSAPMA		##	Seçili veritabanı girişlerinden oluşan bir örneğe dayanarak, standart sapmayı tahmin eder.
+DSTDEVP			= VSEÇSTDSAPMAS		##	Standart sapmayı, seçili veritabanı girişlerinin tüm popülasyonunu esas alarak hesaplar.
+DSUM			= VSEÇTOPLA			##	Kayıtların alan sütununda bulunan, ölçütle eşleşen sayıları toplar.
+DVAR			= VSEÇVAR			##	Seçili veritabanı girişlerinden oluşan bir örneği esas alarak farkı tahmin eder.
+DVARP			= VSEÇVARS			##	Seçili veritabanı girişlerinin tüm popülasyonunu esas alarak farkı hesaplar.
+
+
+##
+##	Date and time functions				Tarih ve saat işlevleri
+##
+DATE			= TARİH				##	Belirli bir tarihin seri numarasını verir.
+DATEVALUE		= TARİHSAYISI		##	Metin biçimindeki bir tarihi seri numarasına dönüştürür.
+DAY				= GÜN				##	Seri numarasını, ayın bir gününe dönüştürür.
+DAYS360			= GÜN360			##	İki tarih arasındaki gün sayısını, 360 günlük yılı esas alarak hesaplar.
+EDATE			= SERİTARİH			##	Başlangıç tarihinden itibaren, belirtilen ay sayısından önce veya sonraki tarihin seri numarasını verir.
+EOMONTH			= SERİAY			##	Belirtilen sayıda ay önce veya sonraki ayın son gününün seri numarasını verir.
+HOUR			= SAAT				##	Bir seri numarasını saate dönüştürür.
+MINUTE			= DAKİKA			##	Bir seri numarasını dakikaya dönüştürür.
+MONTH			= AY				##	Bir seri numarasını aya dönüştürür.
+NETWORKDAYS		= TAMİŞGÜNÜ			##	İki tarih arasındaki tam çalışma günlerinin sayısını verir.
+NOW				= ŞİMDİ				##	Geçerli tarihin ve saatin seri numarasını verir.
+SECOND			= SANİYE			##	Bir seri numarasını saniyeye dönüştürür.
+TIME			= ZAMAN				##	Belirli bir zamanın seri numarasını verir.
+TIMEVALUE		= ZAMANSAYISI		##	Metin biçimindeki zamanı seri numarasına dönüştürür.
+TODAY			= BUGÜN				##	Bugünün tarihini seri numarasına dönüştürür.
+WEEKDAY			= HAFTANINGÜNÜ		##	Bir seri numarasını, haftanın gününe dönüştürür.
+WEEKNUM			= HAFTASAY			##	Dizisel değerini, haftanın yıl içinde bulunduğu konumu sayısal olarak gösteren sayıya dönüştürür.
+WORKDAY			= İŞGÜNÜ			##	Belirtilen sayıda çalışma günü öncesinin ya da sonrasının tarihinin seri numarasını verir.
+YEAR			= YIL				##	Bir seri numarasını yıla dönüştürür.
+YEARFRAC		= YILORAN			##	Başlangıç_tarihi ve bitiş_tarihi arasındaki tam günleri gösteren yıl kesrini verir.
+
+
+##
+##	Engineering functions				Mühendislik işlevleri
+##
+BESSELI			= BESSELI			##	Değiştirilmiş Bessel fonksiyonu In(x)'i verir.
+BESSELJ			= BESSELJ			##	Bessel fonksiyonu Jn(x)'i verir.
+BESSELK			= BESSELK			##	Değiştirilmiş Bessel fonksiyonu Kn(x)'i verir.
+BESSELY			= BESSELY			##	Bessel fonksiyonu Yn(x)'i verir.
+BIN2DEC			= BIN2DEC			##	İkili bir sayıyı, ondalık sayıya dönüştürür.
+BIN2HEX			= BIN2HEX			##	İkili bir sayıyı, onaltılıya dönüştürür.
+BIN2OCT			= BIN2OCT			##	İkili bir sayıyı, sekizliye dönüştürür.
+COMPLEX			= KARMAŞIK			##	Gerçek ve sanal katsayıları, karmaşık sayıya dönüştürür.
+CONVERT			= ÇEVİR				##	Bir sayıyı, bir ölçüm sisteminden bir başka ölçüm sistemine dönüştürür.
+DEC2BIN			= DEC2BIN			##	Ondalık bir sayıyı, ikiliye dönüştürür.
+DEC2HEX			= DEC2HEX			##	Ondalık bir sayıyı, onaltılıya dönüştürür.
+DEC2OCT			= DEC2OCT			##	Ondalık bir sayıyı sekizliğe dönüştürür.
+DELTA			= DELTA				##	İki değerin eşit olup olmadığını sınar.
+ERF				= HATAİŞLEV			##	Hata işlevini verir.
+ERFC			= TÜMHATAİŞLEV		##	Tümleyici hata işlevini verir.
+GESTEP			= BESINIR			##	Bir sayının eşik değerinden büyük olup olmadığını sınar.
+HEX2BIN			= HEX2BIN			##	Onaltılı bir sayıyı ikiliye dönüştürür.
+HEX2DEC			= HEX2DEC			##	Onaltılı bir sayıyı ondalığa dönüştürür.
+HEX2OCT			= HEX2OCT			##	Onaltılı bir sayıyı sekizliğe dönüştürür.
+IMABS			= SANMUTLAK			##	Karmaşık bir sayının mutlak değerini (modül) verir.
+IMAGINARY		= SANAL				##	Karmaşık bir sayının sanal katsayısını verir.
+IMARGUMENT		= SANBAĞ_DEĞİŞKEN	##	Radyanlarla belirtilen bir açı olan teta bağımsız değişkenini verir.
+IMCONJUGATE		= SANEŞLENEK		##	Karmaşık bir sayının karmaşık eşleniğini verir.
+IMCOS			= SANCOS			##	Karmaşık bir sayının kosinüsünü verir.
+IMDIV			= SANBÖL			##	İki karmaşık sayının bölümünü verir.
+IMEXP			= SANÜS				##	Karmaşık bir sayının üssünü verir.
+IMLN			= SANLN				##	Karmaşık bir sayının doğal logaritmasını verir.
+IMLOG10			= SANLOG10			##	Karmaşık bir sayının, 10 tabanında logaritmasını verir.
+IMLOG2			= SANLOG2			##	Karmaşık bir sayının 2 tabanında logaritmasını verir.
+IMPOWER			= SANÜSSÜ			##	Karmaşık bir sayıyı, bir tamsayı üssüne yükseltilmiş olarak verir.
+IMPRODUCT		= SANÇARP			##	Karmaşık sayıların çarpımını verir.
+IMREAL			= SANGERÇEK			##	Karmaşık bir sayının, gerçek katsayısını verir.
+IMSIN			= SANSIN			##	Karmaşık bir sayının sinüsünü verir.
+IMSQRT			= SANKAREKÖK		##	Karmaşık bir sayının karekökünü verir.
+IMSUB			= SANÇIKAR			##	İki karmaşık sayının farkını verir.
+IMSUM			= SANTOPLA			##	Karmaşık sayıların toplamını verir.
+OCT2BIN			= OCT2BIN			##	Sekizli bir sayıyı ikiliye dönüştürür.
+OCT2DEC			= OCT2DEC			##	Sekizli bir sayıyı ondalığa dönüştürür.
+OCT2HEX			= OCT2HEX			##	Sekizli bir sayıyı onaltılıya dönüştürür.
+
+
+##
+##	Financial functions				Finansal fonksiyonlar
+##
+ACCRINT			= GERÇEKFAİZ		##	Dönemsel faiz ödeyen hisse senedine ilişkin tahakkuk eden faizi getirir.
+ACCRINTM		= GERÇEKFAİZV		##	Vadesinde ödeme yapan bir tahvilin tahakkuk etmiş faizini verir.
+AMORDEGRC		= AMORDEGRC			##	Yıpranma katsayısı kullanarak her hesap döneminin değer kaybını verir.
+AMORLINC		= AMORLINC			##	Her hesap dönemi içindeki yıpranmayı verir.
+COUPDAYBS		= KUPONGÜNBD		##	Kupon süresinin başlangıcından alış tarihine kadar olan süredeki gün sayısını verir.
+COUPDAYS		= KUPONGÜN			##	Kupon süresindeki, gün sayısını, alış tarihini de içermek üzere, verir.
+COUPDAYSNC		= KUPONGÜNDSK		##	Alış tarihinden bir sonraki kupon tarihine kadar olan gün sayısını verir.
+COUPNCD			= KUPONGÜNSKT		##	Alış tarihinden bir sonraki kupon tarihini verir.
+COUPNUM			= KUPONSAYI			##	Alış tarihiyle vade tarihi arasında ödenecek kuponların sayısını verir.
+COUPPCD			= KUPONGÜNÖKT		##	Alış tarihinden bir önceki kupon tarihini verir.
+CUMIPMT			= AİÇVERİMORANI		##	İki dönem arasında ödenen kümülatif faizi verir.
+CUMPRINC		= ANA_PARA_ÖDEMESİ	##	İki dönem arasında bir borç üzerine ödenen birikimli temeli verir.
+DB				= AZALANBAKİYE		##	Bir malın belirtilen bir süre içindeki yıpranmasını, sabit azalan bakiye yöntemini kullanarak verir.
+DDB				= ÇİFTAZALANBAKİYE	##	Bir malın belirtilen bir süre içindeki yıpranmasını, çift azalan bakiye yöntemi ya da sizin belirttiğiniz başka bir yöntemi kullanarak verir.
+DISC			= İNDİRİM			##	Bir tahvilin indirim oranını verir.
+DOLLARDE		= LİRAON			##	Kesir olarak tanımlanmış lira fiyatını, ondalık sayı olarak tanımlanmış lira fiyatına dönüştürür.
+DOLLARFR		= LİRAKES			##	Ondalık sayı olarak tanımlanmış lira fiyatını, kesir olarak tanımlanmış lira fiyatına dönüştürür.
+DURATION		= SÜRE				##	Belli aralıklarla faiz ödemesi yapan bir tahvilin yıllık süresini verir.
+EFFECT			= ETKİN				##	Efektif yıllık faiz oranını verir.
+FV				= ANBD				##	Bir yatırımın gelecekteki değerini verir.
+FVSCHEDULE		= GDPROGRAM			##	Bir seri birleşik faiz oranı uyguladıktan sonra, bir başlangıçtaki anaparanın gelecekteki değerini verir.
+INTRATE			= FAİZORANI			##	Tam olarak yatırım yapılmış bir tahvilin faiz oranını verir.
+IPMT			= FAİZTUTARI		##	Bir yatırımın verilen bir süre için faiz ödemesini verir.
+IRR				= İÇ_VERİM_ORANI	##	Bir para akışı serisi için, iç verim oranını verir.
+ISPMT			= ISPMT				##	Yatırımın belirli bir dönemi boyunca ödenen faizi hesaplar.
+MDURATION		= MSÜRE				##	Varsayılan par değeri 10.000.000 lira olan bir tahvil için Macauley değiştirilmiş süreyi verir.
+MIRR			= D_İÇ_VERİM_ORANI	##	Pozitif ve negatif para akışlarının farklı oranlarda finanse edildiği durumlarda, iç verim oranını verir.
+NOMINAL			= NOMİNAL			##	Yıllık nominal faiz oranını verir.
+NPER			= DÖNEM_SAYISI		##	Bir yatırımın dönem sayısını verir.
+NPV				= NBD				##	Bir yatırımın bugünkü net değerini, bir dönemsel para akışları serisine ve bir indirim oranına bağlı olarak verir.
+ODDFPRICE		= TEKYDEĞER			##	Tek bir ilk dönemi olan bir tahvilin değerini, her 100.000.000 lirada bir verir.
+ODDFYIELD		= TEKYÖDEME			##	Tek bir ilk dönemi olan bir tahvilin ödemesini verir.
+ODDLPRICE		= TEKSDEĞER			##	Tek bir son dönemi olan bir tahvilin fiyatını her 10.000.000 lirada bir verir.
+ODDLYIELD		= TEKSÖDEME			##	Tek bir son dönemi olan bir tahvilin ödemesini verir.
+PMT				= DEVRESEL_ÖDEME	##	Bir yıllık dönemsel ödemeyi verir.
+PPMT			= ANA_PARA_ÖDEMESİ	##	Verilen bir süre için, bir yatırımın anaparasına dayanan ödemeyi verir.
+PRICE			= DEĞER				##	Dönemsel faiz ödeyen bir tahvilin fiyatını 10.000.00 liralık değer başına verir.
+PRICEDISC		= DEĞERİND			##	İndirimli bir tahvilin fiyatını 10.000.000 liralık nominal değer başına verir.
+PRICEMAT		= DEĞERVADE			

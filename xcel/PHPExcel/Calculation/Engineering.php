@@ -1,0 +1,547 @@
+<?php
+
+/** PHPExcel root directory */
+if (!defined('PHPEXCEL_ROOT')) {
+    /**
+     * @ignore
+     */
+    define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../../');
+    require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
+}
+
+/** EULER */
+define('EULER', 2.71828182845904523536);
+
+/**
+ * PHPExcel_Calculation_Engineering
+ *
+ * Copyright (c) 2006 - 2015 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ *
+ * @category    PHPExcel
+ * @package        PHPExcel_Calculation
+ * @copyright    Copyright (c) 2006 - 2015 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license        http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version        ##VERSION##, ##DATE##
+ */
+class PHPExcel_Calculation_Engineering
+{
+    /**
+     * Details of the Units of measure that can be used in CONVERTUOM()
+     *
+     * @var mixed[]
+     */
+    private static $conversionUnits = array(
+        'g'     => array('Group' => 'Mass',        'Unit Name' => 'Gram',                     'AllowPrefix' => true),
+        'sg'    => array('Group' => 'Mass',        'Unit Name' => 'Slug',                     'AllowPrefix' => false),
+        'lbm'   => array('Group' => 'Mass',        'Unit Name' => 'Pound mass (avoirdupois)', 'AllowPrefix' => false),
+        'u'     => array('Group' => 'Mass',        'Unit Name' => 'U (atomic mass unit)',     'AllowPrefix' => true),
+        'ozm'   => array('Group' => 'Mass',        'Unit Name' => 'Ounce mass (avoirdupois)', 'AllowPrefix' => false),
+        'm'     => array('Group' => 'Distance',    'Unit Name' => 'Meter',                    'AllowPrefix' => true),
+        'mi'    => array('Group' => 'Distance',    'Unit Name' => 'Statute mile',             'AllowPrefix' => false),
+        'Nmi'   => array('Group' => 'Distance',    'Unit Name' => 'Nautical mile',            'AllowPrefix' => false),
+        'in'    => array('Group' => 'Distance',    'Unit Name' => 'Inch',                     'AllowPrefix' => false),
+        'ft'    => array('Group' => 'Distance',    'Unit Name' => 'Foot',                     'AllowPrefix' => false),
+        'yd'    => array('Group' => 'Distance',    'Unit Name' => 'Yard',                     'AllowPrefix' => false),
+        'ang'   => array('Group' => 'Distance',    'Unit Name' => 'Angstrom',                 'AllowPrefix' => true),
+        'Pica'  => array('Group' => 'Distance',    'Unit Name' => 'Pica (1/72 in)',           'AllowPrefix' => false),
+        'yr'    => array('Group' => 'Time',        'Unit Name' => 'Year',                     'AllowPrefix' => false),
+        'day'   => array('Group' => 'Time',        'Unit Name' => 'Day',                      'AllowPrefix' => false),
+        'hr'    => array('Group' => 'Time',        'Unit Name' => 'Hour',                     'AllowPrefix' => false),
+        'mn'    => array('Group' => 'Time',        'Unit Name' => 'Minute',                   'AllowPrefix' => false),
+        'sec'   => array('Group' => 'Time',        'Unit Name' => 'Second',                   'AllowPrefix' => true),
+        'Pa'    => array('Group' => 'Pressure',    'Unit Name' => 'Pascal',                   'AllowPrefix' => true),
+        'p'     => array('Group' => 'Pressure',    'Unit Name' => 'Pascal',                   'AllowPrefix' => true),
+        'atm'   => array('Group' => 'Pressure',    'Unit Name' => 'Atmosphere',               'AllowPrefix' => true),
+        'at'    => array('Group' => 'Pressure',    'Unit Name' => 'Atmosphere',               'AllowPrefix' => true),
+        'mmHg'  => array('Group' => 'Pressure',    'Unit Name' => 'mm of Mercury',            'AllowPrefix' => true),
+        'N'     => array('Group' => 'Force',       'Unit Name' => 'Newton',                   'AllowPrefix' => true),
+        'dyn'   => array('Group' => 'Force',       'Unit Name' => 'Dyne',                     'AllowPrefix' => true),
+        'dy'    => array('Group' => 'Force',       'Unit Name' => 'Dyne',                     'AllowPrefix' => true),
+        'lbf'   => array('Group' => 'Force',       'Unit Name' => 'Pound force',              'AllowPrefix' => false),
+        'J'     => array('Group' => 'Energy',      'Unit Name' => 'Joule',                    'AllowPrefix' => true),
+        'e'     => array('Group' => 'Energy',      'Unit Name' => 'Erg',                      'AllowPrefix' => true),
+        'c'     => array('Group' => 'Energy',      'Unit Name' => 'Thermodynamic calorie',    'AllowPrefix' => true),
+        'cal'   => array('Group' => 'Energy',      'Unit Name' => 'IT calorie',               'AllowPrefix' => true),
+        'eV'    => array('Group' => 'Energy',      'Unit Name' => 'Electron volt',            'AllowPrefix' => true),
+        'ev'    => array('Group' => 'Energy',      'Unit Name' => 'Electron volt',            'AllowPrefix' => true),
+        'HPh'   => array('Group' => 'Energy',      'Unit Name' => 'Horsepower-hour',          'AllowPrefix' => false),
+        'hh'    => array('Group' => 'Energy',      'Unit Name' => 'Horsepower-hour',          'AllowPrefix' => false),
+        'Wh'    => array('Group' => 'Energy',      'Unit Name' => 'Watt-hour',                'AllowPrefix' => true),
+        'wh'    => array('Group' => 'Energy',      'Unit Name' => 'Watt-hour',                'AllowPrefix' => true),
+        'flb'   => array('Group' => 'Energy',      'Unit Name' => 'Foot-pound',               'AllowPrefix' => false),
+        'BTU'   => array('Group' => 'Energy',      'Unit Name' => 'BTU',                      'AllowPrefix' => false),
+        'btu'   => array('Group' => 'Energy',      'Unit Name' => 'BTU',                      'AllowPrefix' => false),
+        'HP'    => array('Group' => 'Power',       'Unit Name' => 'Horsepower',               'AllowPrefix' => false),
+        'h'     => array('Group' => 'Power',       'Unit Name' => 'Horsepower',               'AllowPrefix' => false),
+        'W'     => array('Group' => 'Power',       'Unit Name' => 'Watt',                     'AllowPrefix' => true),
+        'w'     => array('Group' => 'Power',       'Unit Name' => 'Watt',                     'AllowPrefix' => true),
+        'T'     => array('Group' => 'Magnetism',   'Unit Name' => 'Tesla',                    'AllowPrefix' => true),
+        'ga'    => array('Group' => 'Magnetism',   'Unit Name' => 'Gauss',                    'AllowPrefix' => true),
+        'C'     => array('Group' => 'Temperature', 'Unit Name' => 'Celsius',                  'AllowPrefix' => false),
+        'cel'   => array('Group' => 'Temperature', 'Unit Name' => 'Celsius',                  'AllowPrefix' => false),
+        'F'     => array('Group' => 'Temperature', 'Unit Name' => 'Fahrenheit',               'AllowPrefix' => false),
+        'fah'   => array('Group' => 'Temperature', 'Unit Name' => 'Fahrenheit',               'AllowPrefix' => false),
+        'K'     => array('Group' => 'Temperature', 'Unit Name' => 'Kelvin',                   'AllowPrefix' => false),
+        'kel'   => array('Group' => 'Temperature', 'Unit Name' => 'Kelvin',                   'AllowPrefix' => false),
+        'tsp'   => array('Group' => 'Liquid',      'Unit Name' => 'Teaspoon',                 'AllowPrefix' => false),
+        'tbs'   => array('Group' => 'Liquid',      'Unit Name' => 'Tablespoon',               'AllowPrefix' => false),
+        'oz'    => array('Group' => 'Liquid',      'Unit Name' => 'Fluid Ounce',              'AllowPrefix' => false),
+        'cup'   => array('Group' => 'Liquid',      'Unit Name' => 'Cup',                      'AllowPrefix' => false),
+        'pt'    => array('Group' => 'Liquid',      'Unit Name' => 'U.S. Pint',                'AllowPrefix' => false),
+        'us_pt' => array('Group' => 'Liquid',      'Unit Name' => 'U.S. Pint',                'AllowPrefix' => false),
+        'uk_pt' => array('Group' => 'Liquid',      'Unit Name' => 'U.K. Pint',                'AllowPrefix' => false),
+        'qt'    => array('Group' => 'Liquid',      'Unit Name' => 'Quart',                    'AllowPrefix' => false),
+        'gal'   => array('Group' => 'Liquid',      'Unit Name' => 'Gallon',                   'AllowPrefix' => false),
+        'l'     => array('Group' => 'Liquid',      'Unit Name' => 'Litre',                    'AllowPrefix' => true),
+        'lt'    => array('Group' => 'Liquid',      'Unit Name' => 'Litre',                    'AllowPrefix' => true),
+    );
+
+    /**
+     * Details of the Multiplier prefixes that can be used with Units of Measure in CONVERTUOM()
+     *
+     * @var mixed[]
+     */
+    private static $conversionMultipliers = array(
+        'Y' => array('multiplier' => 1E24,  'name' => 'yotta'),
+        'Z' => array('multiplier' => 1E21,  'name' => 'zetta'),
+        'E' => array('multiplier' => 1E18,  'name' => 'exa'),
+        'P' => array('multiplier' => 1E15,  'name' => 'peta'),
+        'T' => array('multiplier' => 1E12,  'name' => 'tera'),
+        'G' => array('multiplier' => 1E9,   'name' => 'giga'),
+        'M' => array('multiplier' => 1E6,   'name' => 'mega'),
+        'k' => array('multiplier' => 1E3,   'name' => 'kilo'),
+        'h' => array('multiplier' => 1E2,   'name' => 'hecto'),
+        'e' => array('multiplier' => 1E1,   'name' => 'deka'),
+        'd' => array('multiplier' => 1E-1,  'name' => 'deci'),
+        'c' => array('multiplier' => 1E-2,  'name' => 'centi'),
+        'm' => array('multiplier' => 1E-3,  'name' => 'milli'),
+        'u' => array('multiplier' => 1E-6,  'name' => 'micro'),
+        'n' => array('multiplier' => 1E-9,  'name' => 'nano'),
+        'p' => array('multiplier' => 1E-12, 'name' => 'pico'),
+        'f' => array('multiplier' => 1E-15, 'name' => 'femto'),
+        'a' => array('multiplier' => 1E-18, 'name' => 'atto'),
+        'z' => array('multiplier' => 1E-21, 'name' => 'zepto'),
+        'y' => array('multiplier' => 1E-24, 'name' => 'yocto'),
+    );
+
+    /**
+     * Details of the Units of measure conversion factors, organised by group
+     *
+     * @var mixed[]
+     */
+    private static $unitConversions = array(
+        'Mass' => array(
+            'g' => array(
+                'g'   => 1.0,
+                'sg'  => 6.85220500053478E-05,
+                'lbm' => 2.20462291469134E-03,
+                'u'   => 6.02217000000000E+23,
+                'ozm' => 3.52739718003627E-02,
+            ),
+            'sg' => array(
+                'g'   => 1.45938424189287E+04,
+                'sg'  => 1.0,
+                'lbm' => 3.21739194101647E+01,
+                'u'   => 8.78866000000000E+27,
+                'ozm' => 5.14782785944229E+02,
+            ),
+            'lbm' => array(
+                'g'   => 4.5359230974881148E+02,
+                'sg'  => 3.10810749306493E-02,
+                'lbm' => 1.0,
+                'u'   => 2.73161000000000E+26,
+                'ozm' => 1.60000023429410E+01,
+            ),
+            'u' => array(
+                'g'   => 1.66053100460465E-24,
+                'sg'  => 1.13782988532950E-28,
+                'lbm' => 3.66084470330684E-27,
+                'u'   => 1.0,
+                'ozm' => 5.85735238300524E-26,
+            ),
+            'ozm' => array(
+                'g'   => 2.83495152079732E+01,
+                'sg'  => 1.94256689870811E-03,
+                'lbm' => 6.24999908478882E-02,
+                'u'   => 1.70725600000000E+25,
+                'ozm' => 1.0,
+            ),
+        ),
+        'Distance' => array(
+            'm' => array(
+                'm'    => 1.0,
+                'mi'   => 6.21371192237334E-04,
+                'Nmi'  => 5.39956803455724E-04,
+                'in'   => 3.93700787401575E+01,
+                'ft'   => 3.28083989501312E+00,
+                'yd'   => 1.09361329797891E+00,
+                'ang'  => 1.00000000000000E+10,
+                'Pica' => 2.83464566929116E+03,
+            ),
+            'mi' => array(
+                'm'    => 1.60934400000000E+03,
+                'mi'   => 1.0,
+                'Nmi'  => 8.68976241900648E-01,
+                'in'   => 6.33600000000000E+04,
+                'ft'   => 5.28000000000000E+03,
+                'yd'   => 1.76000000000000E+03,
+                'ang'  => 1.60934400000000E+13,
+                'Pica' => 4.56191999999971E+06,
+            ),
+            'Nmi' => array(
+                'm'    => 1.85200000000000E+03,
+                'mi'   => 1.15077944802354E+00,
+                'Nmi'  => 1.0,
+                'in'   => 7.29133858267717E+04,
+                'ft'   => 6.07611548556430E+03,
+                'yd'   => 2.02537182785694E+03,
+                'ang'  => 1.85200000000000E+13,
+                'Pica' => 5.24976377952723E+06,
+            ),
+            'in' => array(
+                'm'    => 2.54000000000000E-02,
+                'mi'   => 1.57828282828283E-05,
+                'Nmi'  => 1.37149028077754E-05,
+                'in'   => 1.0,
+                'ft'   => 8.33333333333333E-02,
+                'yd'   => 2.77777777686643E-02,
+                'ang'  => 2.54000000000000E+08,
+                'Pica' => 7.19999999999955E+01,
+            ),
+            'ft' => array(
+                'm'    => 3.04800000000000E-01,
+                'mi'   => 1.89393939393939E-04,
+                'Nmi'  => 1.64578833693305E-04,
+                'in'   => 1.20000000000000E+01,
+                'ft'   => 1.0,
+                'yd'   => 3.33333333223972E-01,
+                'ang'  => 3.04800000000000E+09,
+                'Pica' => 8.63999999999946E+02,
+            ),
+            'yd' => array(
+                'm'    => 9.14400000300000E-01,
+                'mi'   => 5.68181818368230E-04,
+                'Nmi'  => 4.93736501241901E-04,
+                'in'   => 3.60000000118110E+01,
+                'ft'   => 3.00000000000000E+00,
+                'yd'   => 1.0,
+                'ang'  => 9.14400000300000E+09,
+                'Pica' => 2.59200000085023E+03,
+            ),
+            'ang' => array(
+                'm'    => 1.00000000000000E-10,
+                'mi'   => 6.21371192237334E-14,
+                'Nmi'  => 5.39956803455724E-14,
+                'in'   => 3.93700787401575E-09,
+                'ft'   => 3.28083989501312E-10,
+                'yd'   => 1.09361329797891E-10,
+                'ang'  => 1.0,
+                'Pica' => 2.83464566929116E-07,
+            ),
+            'Pica' => array(
+                'm'    => 3.52777777777800E-04,
+                'mi'   => 2.19205948372629E-07,
+                'Nmi'  => 1.90484761219114E-07,
+                'in'   => 1.38888888888898E-02,
+                'ft'   => 1.15740740740748E-03,
+                'yd'   => 3.85802469009251E-04,
+                'ang'  => 3.52777777777800E+06,
+                'Pica' => 1.0,
+            ),
+        ),
+        'Time' => array(
+            'yr' => array(
+                'yr'  => 1.0,
+                'day' => 365.25,
+                'hr'  => 8766.0,
+                'mn'  => 525960.0,
+                'sec' => 31557600.0,
+            ),
+            'day' => array(
+                'yr'  => 2.73785078713210E-03,
+                'day' => 1.0,
+                'hr'  => 24.0,
+                'mn'  => 1440.0,
+                'sec' => 86400.0,
+            ),
+            'hr' => array(
+                'yr'  => 1.14077116130504E-04,
+                'day' => 4.16666666666667E-02,
+                'hr'  => 1.0,
+                'mn'  => 60.0,
+                'sec' => 3600.0,
+            ),
+            'mn' => array(
+                'yr'  => 1.90128526884174E-06,
+                'day' => 6.94444444444444E-04,
+                'hr'  => 1.66666666666667E-02,
+                'mn'  => 1.0,
+                'sec' => 60.0,
+            ),
+            'sec' => array(
+                'yr'  => 3.16880878140289E-08,
+                'day' => 1.15740740740741E-05,
+                'hr'  => 2.77777777777778E-04,
+                'mn'  => 1.66666666666667E-02,
+                'sec' => 1.0,
+            ),
+        ),
+        'Pressure' => array(
+            'Pa' => array(
+                'Pa'   => 1.0,
+                'p'    => 1.0,
+                'atm'  => 9.86923299998193E-06,
+                'at'   => 9.86923299998193E-06,
+                'mmHg' => 7.50061707998627E-03,
+            ),
+            'p' => array(
+                'Pa'   => 1.0,
+                'p'    => 1.0,
+                'atm'  => 9.86923299998193E-06,
+                'at'   => 9.86923299998193E-06,
+                'mmHg' => 7.50061707998627E-03,
+            ),
+            'atm' => array(
+                'Pa'   => 1.01324996583000E+05,
+                'p'    => 1.01324996583000E+05,
+                'atm'  => 1.0,
+                'at'   => 1.0,
+                'mmHg' => 760.0,
+            ),
+            'at' => array(
+                'Pa'   => 1.01324996583000E+05,
+                'p'    => 1.01324996583000E+05,
+                'atm'  => 1.0,
+                'at'   => 1.0,
+                'mmHg' => 760.0,
+            ),
+            'mmHg' => array(
+                'Pa'   => 1.33322363925000E+02,
+                'p'    => 1.33322363925000E+02,
+                'atm'  => 1.31578947368421E-03,
+                'at'   => 1.31578947368421E-03,
+                'mmHg' => 1.0,
+            ),
+        ),
+        'Force' => array(
+            'N' => array(
+                'N'   => 1.0,
+                'dyn' => 1.0E+5,
+                'dy'  => 1.0E+5,
+                'lbf' => 2.24808923655339E-01,
+            ),
+            'dyn' => array(
+                'N'   => 1.0E-5,
+                'dyn' => 1.0,
+                'dy'  => 1.0,
+                'lbf' => 2.24808923655339E-06,
+            ),
+            'dy' => array(
+                'N'   => 1.0E-5,
+                'dyn' => 1.0,
+                'dy'  => 1.0,
+                'lbf' => 2.24808923655339E-06,
+            ),
+            'lbf' => array(
+                'N'   => 4.448222,
+                'dyn' => 4.448222E+5,
+                'dy'  => 4.448222E+5,
+                'lbf' => 1.0,
+            ),
+        ),
+        'Energy' => array(
+            'J' => array(
+                'J'   => 1.0,
+                'e'   => 9.99999519343231E+06,
+                'c'   => 2.39006249473467E-01,
+                'cal' => 2.38846190642017E-01,
+                'eV'  => 6.24145700000000E+18,
+                'ev'  => 6.24145700000000E+18,
+                'HPh' => 3.72506430801000E-07,
+                'hh'  => 3.72506430801000E-07,
+                'Wh'  => 2.77777916238711E-04,
+                'wh'  => 2.77777916238711E-04,
+                'flb' => 2.37304222192651E+01,
+                'BTU' => 9.47815067349015E-04,
+                'btu' => 9.47815067349015E-04,
+            ),
+            'e' => array(
+                'J'   => 1.00000048065700E-07,
+                'e'   => 1.0,
+                'c'   => 2.39006364353494E-08,
+                'cal' => 2.38846305445111E-08,
+                'eV'  => 6.24146000000000E+11,
+                'ev'  => 6.24146000000000E+11,
+                'HPh' => 3.72506609848824E-14,
+                'hh'  => 3.72506609848824E-14,
+                'Wh'  => 2.77778049754611E-11,
+                'wh'  => 2.77778049754611E-11,
+                'flb' => 2.37304336254586E-06,
+                'BTU' => 9.47815522922962E-11,
+                'btu' => 9.47815522922962E-11,
+            ),
+            'c' => array(
+                'J'   => 4.18399101363672E+00,
+                'e'   => 4.18398900257312E+07,
+                'c'   => 1.0,
+                'cal' => 9.99330315287563E-01,
+                'eV'  => 2.61142000000000E+19,
+                'ev'  => 2.61142000000000E+19,
+                'HPh' => 1.55856355899327E-06,
+                'hh'  => 1.55856355899327E-06,
+                'Wh'  => 1.16222030532950E-03,
+                'wh'  => 1.16222030532950E-03,
+                'flb' => 9.92878733152102E+01,
+                'BTU' => 3.96564972437776E-03,
+                'btu' => 3.96564972437776E-03,
+            ),
+            'cal' => array(
+                'J'   => 4.18679484613929E+00,
+                'e'   => 4.18679283372801E+07,
+                'c'   => 1.00067013349059E+00,
+                'cal' => 1.0,
+                'eV'  => 2.61317000000000E+19,
+                'ev'  => 2.61317000000000E+19,
+                'HPh' => 1.55960800463137E-06,
+                'hh'  => 1.55960800463137E-06,
+                'Wh'  => 1.16299914807955E-03,
+                'wh'  => 1.16299914807955E-03,
+                'flb' => 9.93544094443283E+01,
+                'BTU' => 3.96830723907002E-03,
+                'btu' => 3.96830723907002E-03,
+            ),
+            'eV' => array(
+                'J'   => 1.60219000146921E-19,
+                'e'   => 1.60218923136574E-12,
+                'c'   => 3.82933423195043E-20,
+                'cal' => 3.82676978535648E-20,
+                'eV'  => 1.0,
+                'ev'  => 1.0,
+                'HPh' => 5.96826078912344E-26,
+                'hh'  => 5.96826078912344E-26,
+                'Wh'  => 4.45053000026614E-23,
+                'wh'  => 4.45053000026614E-23,
+                'flb' => 3.80206452103492E-18,
+                'BTU' => 1.51857982414846E-22,
+                'btu' => 1.51857982414846E-22,
+            ),
+            'ev' => array(
+                'J'   => 1.60219000146921E-19,
+                'e'   => 1.60218923136574E-12,
+                'c'   => 3.82933423195043E-20,
+                'cal' => 3.82676978535648E-20,
+                'eV'  => 1.0,
+                'ev'  => 1.0,
+                'HPh' => 5.96826078912344E-26,
+                'hh'  => 5.96826078912344E-26,
+                'Wh'  => 4.45053000026614E-23,
+                'wh'  => 4.45053000026614E-23,
+                'flb' => 3.80206452103492E-18,
+                'BTU' => 1.51857982414846E-22,
+                'btu' => 1.51857982414846E-22,
+            ),
+            'HPh' => array(
+                'J'   => 2.68451741316170E+06,
+                'e'   => 2.68451612283024E+13,
+                'c'   => 6.41616438565991E+05,
+                'cal' => 6.41186757845835E+05,
+                'eV'  => 1.67553000000000E+25,
+                'ev'  => 1.67553000000000E+25,
+                'HPh' => 1.0,
+                'hh'  => 1.0,
+                'Wh'  => 7.45699653134593E+02,
+                'wh'  => 7.45699653134593E+02,
+                'flb' => 6.37047316692964E+07,
+                'BTU' => 2.54442605275546E+03,
+                'btu' => 2.54442605275546E+03,
+            ),
+            'hh' => array(
+                'J'   => 2.68451741316170E+06,
+                'e'   => 2.68451612283024E+13,
+                'c'   => 6.41616438565991E+05,
+                'cal' => 6.41186757845835E+05,
+                'eV'  => 1.67553000000000E+25,
+                'ev'  => 1.67553000000000E+25,
+                'HPh' => 1.0,
+                'hh'  => 1.0,
+                'Wh'  => 7.45699653134593E+02,
+                'wh'  => 7.45699653134593E+02,
+                'flb' => 6.37047316692964E+07,
+                'BTU' => 2.54442605275546E+03,
+                'btu' => 2.54442605275546E+03,
+            ),
+            'Wh' => array(
+                'J'   => 3.59999820554720E+03,
+                'e'   => 3.59999647518369E+10,
+                'c'   => 8.60422069219046E+02,
+                'cal' => 8.59845857713046E+02,
+                'eV'  => 2.24692340000000E+22,
+                'ev'  => 2.24692340000000E+22,
+                'HPh' => 1.34102248243839E-03,
+                'hh'  => 1.34102248243839E-03,
+                'Wh'  => 1.0,
+                'wh'  => 1.0,
+                'flb' => 8.54294774062316E+04,
+                'BTU' => 3.41213254164705E+00,
+                'btu' => 3.41213254164705E+00,
+            ),
+            'wh' => array(
+                'J'   => 3.59999820554720E+03,
+                'e'   => 3.59999647518369E+10,
+                'c'   => 8.60422069219046E+02,
+                'cal' => 8.59845857713046E+02,
+                'eV'  => 2.24692340000000E+22,
+                'ev'  => 2.24692340000000E+22,
+                'HPh' => 1.34102248243839E-03,
+                'hh'  => 1.34102248243839E-03,
+                'Wh'  => 1.0,
+                'wh'  => 1.0,
+                'flb' => 8.54294774062316E+04,
+                'BTU' => 3.41213254164705E+00,
+                'btu' => 3.41213254164705E+00,
+            ),
+            'flb' => array(
+                'J'   => 4.21400003236424E-02,
+                'e'   => 4.21399800687660E+05,
+                'c'   => 1.00717234301644E-02,
+                'cal' => 1.00649785509554E-02,
+                'eV'  => 2.63015000000000E+17,
+                'ev'  => 2.63015000000000E+17,
+                'HPh' => 1.56974211145130E-08,
+                'hh'  => 1.56974211145130E-08,
+                'Wh'  => 1.17055614802000E-05,
+                'wh'  => 1.17055614802000E-05,
+                'flb' => 1.0,
+                'BTU' => 3.99409272448406E-05,
+                'btu' => 3.99409272448406E-05,
+            ),
+            'BTU' => array(
+                'J'   => 1.05505813786749E+03,
+                'e'   => 1.05505763074665E+10,
+                'c'   => 2.52165488508168E+02,
+                'cal' => 2.51996617135510E+02,
+                'eV'  => 6.58510000000000E+21,
+                'ev'  => 6.58510000000000E+21,
+                'HPh' => 3.93015941224568E-04,
+                'hh'  => 3.93015941224568E-04,
+                'Wh'  => 2.93071851047526E-01,
+                'wh'  => 2.93071851047526E-01,
+                'flb' => 2.50369750774671E+04,
+                'BTU' => 1.0,
+                'btu' => 1.0,
+            ),
+            '

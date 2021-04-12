@@ -1,0 +1,57 @@
+body {}
+.wrapper { max-width:1200px; margin:0 auto; padding-top:15px;}
+.student {text-align:center;border-top:1px solid#353535;border-bottom:1px solid#353535;text-align:center;padding:5px 0px;font-size:22px;}
+li {list-style-type:none;}
+.caption{padding-top: 8px;padding-bottom: 8px;color: #777;text-align: left;border-bottom: 2px solid;border-top: 2px solid;text-align:center;}	
+td{	border:1px solid;}
+th { text-align:center; }
+.form-horizontal {}
+.navmenu ul li{ display:inline-block; padding:2px 10px} 
+thead{}
+.reportview .form-group {clear:both;}
+.bordernone td { border:0; border-bottom:1px solid;}
+.bordernone .pagination { margin:10px;}
+.pagination > li {
+    display: inline-block !important;
+    vertical-align: middle !important;
+} 
+.pagination > li.page_info { margin-right:6px;}
+.searchboxcenter { margin:0 auto; max-width:400px;}
+#remaininghrs {color: firebrick;height: 21px;padding-top: 8px;text-align: center;}
+.form-horizontal textarea { width:100%; max-width:300px;}
+.ui-datepicker .ui-datepicker-title select { color:#000;}
+.ui-widget-header { background-image:none !important; background-color: #286090 !important; border: 1px solid #286090 !important;}
+a.ui-state-default, .ui-widget-content a.ui-state-default, .ui-widget-header a.ui-state-default { color:#000;}
+.instructor .control-label {padding-top:8px;}
+.no-padding-right { padding-right:0 !important;}
+.no-padding { padding:0 !important;}
+.inputwidth-90 .form-control { width:90% !important;}
+.box { background-color: #ccc;
+    margin-bottom: 11px;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    padding: 4px;
+    width: 96%;}
+/*.box .inputfile{height:.1px;opacity:0;overflow:hidden;position:absolute;width:.1px;z-index:-1}*/
+.inputfile-3 + label{color:#d3394c}
+.inputfile + label{cursor:pointer;display:inline-block;font-size:1.25rem;font-weight:700;max-width:80%;overflow:hidden;padding:.625rem 1.25rem;text-overflow:ellipsis;white-space:nowrap}
+.inputfile + label svg{fill:currentcolor;height:1em;margin-right:.25em;margin-top:-.25em;vertical-align:middle;width:1em}
+.form-group.box > div { padding-top:3px;}
+.site-info div {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+}
+.site-info {
+    background-color: #000;
+    color: #fff;
+    font-family: "open_sansregular",sans-serif;
+    font-size: 19px;
+    line-height: 33px;
+    padding: 10px;
+    text-align: center;
+}
+
+.inputwidth-96 .form-control { width:96% !important;}
+.no-padding-left { padding-left:0 !important;} 

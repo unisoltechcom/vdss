@@ -1,0 +1,177 @@
+[10-Nov-2017 11:10:48 America/Chicago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/valleydriver/public_html/offlineadmin/login/dbconf.php on line 8
+[11-Nov-2017 10:46:05 America/Chicago] PHP Warning:  Illegal string offset 'lastlogin' in /home/valleydriver/public_html/offlineadmin/login/checklogin.php on line 24
+[11-Nov-2017 10:46:05 America/Chicago] PHP Warning:  Illegal string offset 'attempts' in /home/valleydriver/public_html/offlineadmin/login/checklogin.php on line 30
+[11-Nov-2017 10:46:05 America/Chicago] PHP Warning:  Illegal string offset 'attempts' in /home/valleydriver/public_html/offlineadmin/login/includes/loginform.php on line 12
+[11-Nov-2017 10:46:05 America/Chicago] PHP Warning:  Illegal string offset 'lastlogin' in /home/valleydriver/public_html/offlineadmin/login/includes/loginform.php on line 15
+[11-Nov-2017 10:46:14 America/Chicago] PHP Warning:  Illegal string offset 'lastlogin' in /home/valleydriver/public_html/offlineadmin/login/checklogin.php on line 24
+[11-Nov-2017 10:46:14 America/Chicago] PHP Warning:  Illegal string offset 'attempts' in /home/valleydriver/public_html/offlineadmin/login/checklogin.php on line 30
+[11-Nov-2017 10:46:14 America/Chicago] PHP Warning:  Illegal string offset 'attempts' in /home/valleydriver/public_html/offlineadmin/login/includes/loginform.php on line 12
+[11-Nov-2017 10:46:14 America/Chicago] PHP Warning:  Illegal string offset 'lastlogin' in /home/valleydriver/public_html/offlineadmin/login/includes/loginform.php on line 15
+[11-Nov-2017 10:48:33 America/Chicago] PHP Warning:  Illegal string offset 'lastlogin' in /home/valleydriver/public_html/offlineadmin/login/checklogin.php on line 24
+[11-Nov-2017 10:48:33 America/Chicago] PHP Warning:  Illegal string offset 'attempts' in /home/valleydriver/public_html/offlineadmin/login/checklogin.php on line 30
+[11-Nov-2017 10:48:33 America/Chicago] PHP Warning:  Illegal string offset 'attempts' in /home/valleydriver/public_html/offlineadmin/login/includes/loginform.php on line 12
+[11-Nov-2017 10:48:33 America/Chicago] PHP Warning:  Illegal string offset 'lastlogin' in /home/valleydriver/public_html/offlineadmin/login/includes/loginform.php on line 15
+[13-Jul-2018 12:16:40 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 12:17:59 UTC] PHP Warning:  Illegal string offset 'attempts' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 12
+[13-Jul-2018 12:17:59 UTC] PHP Warning:  Illegal string offset 'lastlogin' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 15
+[13-Jul-2018 12:17:59 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'valleydr_driving.members' doesn't exist' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php:33
+Stack trace:
+#0 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php(33): PDOStatement->execute()
+#1 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/checklogin.php(38): LoginForm->checkLogin('reception.sudbu...', '99Cote')
+#2 {main}
+  thrown in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 33
+[13-Jul-2018 12:18:06 UTC] PHP Warning:  Illegal string offset 'attempts' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 12
+[13-Jul-2018 12:18:06 UTC] PHP Warning:  Illegal string offset 'lastlogin' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 15
+[13-Jul-2018 12:18:06 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'valleydr_driving.members' doesn't exist' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php:33
+Stack trace:
+#0 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php(33): PDOStatement->execute()
+#1 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/checklogin.php(38): LoginForm->checkLogin('reception.sudbu...', '99Cote')
+#2 {main}
+  thrown in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 33
+[13-Jul-2018 12:18:15 UTC] PHP Warning:  Illegal string offset 'attempts' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 12
+[13-Jul-2018 12:18:15 UTC] PHP Warning:  Illegal string offset 'lastlogin' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 15
+[13-Jul-2018 12:18:15 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'valleydr_driving.members' doesn't exist' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php:33
+Stack trace:
+#0 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php(33): PDOStatement->execute()
+#1 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/checklogin.php(38): LoginForm->checkLogin('reception.sudbu...', '99Cote')
+#2 {main}
+  thrown in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 33
+[13-Jul-2018 12:20:00 UTC] PHP Warning:  Illegal string offset 'attempts' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 12
+[13-Jul-2018 12:20:00 UTC] PHP Warning:  Illegal string offset 'lastlogin' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 15
+[13-Jul-2018 12:20:00 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'valleydr_driving.members' doesn't exist' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php:33
+Stack trace:
+#0 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php(33): PDOStatement->execute()
+#1 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/checklogin.php(38): LoginForm->checkLogin('reception.sudbu...', '99Cote')
+#2 {main}
+  thrown in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 33
+[13-Jul-2018 12:20:52 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 12:21:58 UTC] PHP Warning:  Illegal string offset 'attempts' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 12
+[13-Jul-2018 12:21:58 UTC] PHP Warning:  Illegal string offset 'lastlogin' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 15
+[13-Jul-2018 12:21:58 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'valleydr_driving.members' doesn't exist' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php:33
+Stack trace:
+#0 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php(33): PDOStatement->execute()
+#1 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/checklogin.php(38): LoginForm->checkLogin('reception.sudbu...', '99Cote')
+#2 {main}
+  thrown in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 33
+[13-Jul-2018 12:23:35 UTC] PHP Warning:  Illegal string offset 'attempts' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 12
+[13-Jul-2018 12:23:35 UTC] PHP Warning:  Illegal string offset 'lastlogin' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 15
+[13-Jul-2018 12:23:35 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'valleydr_driving.members' doesn't exist' in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php:33
+Stack trace:
+#0 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php(33): PDOStatement->execute()
+#1 /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/checklogin.php(38): LoginForm->checkLogin('reception.sudbu...', '99Cote')
+#2 {main}
+  thrown in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/includes/loginform.php on line 33
+[13-Jul-2018 13:05:47 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 17:46:15 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 18:37:22 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 18:47:46 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 18:47:56 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 18:51:20 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[13-Jul-2018 19:30:24 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[15-Jul-2018 00:44:23 UTC] PHP Notice:  Undefined index: userlogin in /home/naviga8/public_html/socialmediaexperts.ca/valleydrivingap/login/main_login.php on line 3
+[16-Jul-2018 15:50:55 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Jul-2018 15:52:23 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Jul-2018 15:55:28 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Jul-2018 17:04:09 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[17-Jul-2018 01:32:40 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[17-Jul-2018 01:32:50 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[17-Jul-2018 01:44:13 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[17-Jul-2018 13:24:04 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[17-Jul-2018 15:00:33 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[18-Jul-2018 17:37:44 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[18-Jul-2018 17:37:46 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[18-Jul-2018 18:30:58 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[23-Jul-2018 18:22:12 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[24-Jul-2018 00:37:30 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[24-Jul-2018 00:37:30 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[24-Jul-2018 01:30:37 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[24-Jul-2018 01:35:32 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[24-Jul-2018 10:15:59 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[24-Jul-2018 14:28:53 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[24-Jul-2018 14:28:59 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[25-Jul-2018 11:01:36 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[25-Jul-2018 16:22:59 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[27-Jul-2018 00:52:08 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[27-Jul-2018 22:51:58 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[30-Jul-2018 01:09:04 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[30-Jul-2018 13:12:00 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[31-Jul-2018 02:01:29 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[01-Aug-2018 11:38:04 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[02-Aug-2018 14:01:51 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[03-Aug-2018 11:41:59 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[06-Aug-2018 21:57:29 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[07-Aug-2018 13:15:32 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[08-Aug-2018 11:09:57 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Aug-2018 12:23:08 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[13-Aug-2018 19:43:05 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[14-Aug-2018 01:44:04 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Aug-2018 15:45:26 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Aug-2018 20:46:27 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Aug-2018 00:05:56 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[17-Aug-2018 12:08:52 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[20-Aug-2018 01:33:55 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[20-Aug-2018 13:20:02 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[21-Aug-2018 14:44:26 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[21-Aug-2018 21:05:10 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[22-Aug-2018 16:44:28 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[22-Aug-2018 22:06:42 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[27-Aug-2018 00:12:47 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[27-Aug-2018 18:46:45 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[28-Aug-2018 19:28:03 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[29-Aug-2018 13:16:56 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[29-Aug-2018 21:24:55 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[30-Aug-2018 19:46:47 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[30-Aug-2018 20:41:40 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[31-Aug-2018 14:36:54 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[31-Aug-2018 17:12:07 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[03-Sep-2018 20:50:36 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[04-Sep-2018 15:16:43 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[05-Sep-2018 02:14:38 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[05-Sep-2018 15:46:50 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[06-Sep-2018 11:00:10 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[06-Sep-2018 11:05:11 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[06-Sep-2018 11:25:11 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[06-Sep-2018 14:00:55 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[06-Sep-2018 16:15:13 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[06-Sep-2018 23:36:51 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[07-Sep-2018 15:47:45 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[08-Sep-2018 20:21:10 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[10-Sep-2018 22:16:01 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[10-Sep-2018 22:16:02 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[12-Sep-2018 01:02:22 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[12-Sep-2018 14:20:20 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[13-Sep-2018 11:37:10 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Sep-2018 20:06:47 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[17-Sep-2018 14:28:13 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[18-Sep-2018 02:18:39 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[20-Sep-2018 09:52:07 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[21-Sep-2018 10:03:37 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[26-Sep-2018 12:46:35 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Oct-2018 15:06:22 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Oct-2018 15:06:29 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[16-Oct-2018 15:06:41 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[31-Oct-2018 15:15:05 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[08-Nov-2018 15:41:41 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 05:11:59 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 11:59:49 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 12:01:13 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 12:01:31 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 12:03:20 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 13:05:22 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 13:07:51 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 14:15:34 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[09-Nov-2018 14:41:15 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[13-Nov-2018 00:47:12 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[08-Jan-2019 17:23:36 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[14-Jan-2019 18:11:15 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[14-Jan-2019 18:57:58 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[14-Jan-2019 20:20:10 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Jan-2019 15:11:01 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Jan-2019 15:13:22 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Jan-2019 15:13:31 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Jan-2019 15:14:54 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Jan-2019 15:16:51 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[15-Jan-2019 21:29:06 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[20-Jan-2019 01:45:04 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[20-Jan-2019 02:35:03 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
+[20-Jan-2019 11:16:05 UTC] PHP Notice:  Undefined index: userlogin in /home/oc8g9abo2hqv/public_html/valleydrivingap/login/main_login.php on line 3
